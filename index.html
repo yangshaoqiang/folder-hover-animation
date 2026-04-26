@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Folder Hover Animation</title>
+    <style>
+      :root {
+        --bg-top: #f7fbff;
+        --bg-bottom: #d9e8ff;
+        --shadow: 0 30px 70px rgba(24, 65, 138, 0.18);
+        --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at top, rgba(255, 255, 255, 0.95), transparent 38%),
+          linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+        font-family: "SF Pro Display", "PingFang SC", "Helvetica Neue", sans-serif;
+      }
+
+      .stage {
+        width: min(72vw, 760px);
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+      }
+
+      .folder {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        cursor: pointer;
+        filter: drop-shadow(var(--shadow));
+        perspective: 1800px;
+        transform-style: preserve-3d;
+      }
+
+      .folder img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        user-select: none;
+        -webkit-user-drag: none;
+        transition:
+          transform 520ms var(--ease),
+          filter 520ms var(--ease);
+        transform-origin: center bottom;
+      }
+
+      .layer-2,
+      .layer-3 {
+        transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+        transition-delay: 0ms;
+      }
+
+      .layer-1 {
+        z-index: 1;
+        transform: translateY(0);
+      }
+
+      .layer-2 {
+        z-index: 2;
+        transform: translateY(-18px) scale(0.95);
+      }
+
+      .layer-3 {
+        z-index: 3;
+        transform: translateY(-10px) scale(0.975);
+      }
+
+      .layer-4 {
+        z-index: 4;
+        transform: rotateX(0deg);
+        transform-origin: center bottom;
+      }
+
+      .folder:hover .layer-2 {
+        transform: translateY(-96px) scale(0.95);
+      }
+
+      .folder:hover .layer-3 {
+        transform: translateY(-30px) scale(0.975);
+        transition-delay: 104ms;
+      }
+
+      .folder:hover .layer-4 {
+        transform: rotateX(-36deg);
+      }
+
+      .folder:hover .layer-2,
+      .folder:hover .layer-3 {
+        filter: brightness(1.02);
+      }
+
+      @media (max-width: 640px) {
+        .stage {
+          width: min(88vw, 520px);
+        }
+
+        .layer-2 {
+          transform: translateY(-14px) scale(0.95);
+        }
+
+        .layer-3 {
+          transform: translateY(-8px) scale(0.975);
+        }
+
+        .layer-4 {
+          transform: rotateX(0deg);
+        }
+
+        .folder:hover .layer-2 {
+          transform: translateY(-67px) scale(0.95);
+        }
+
+        .folder:hover .layer-3 {
+          transform: translateY(-21px) scale(0.975);
+          transition-delay: 104ms;
+        }
+
+        .folder:hover .layer-4 {
+          transform: rotateX(-30deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="stage">
+      <div class="folder" aria-label="folder hover preview">
+        <img class="layer-1" src="./assets/第一层.png" alt="Folder base layer" />
+        <img class="layer-2" src="./assets/第二层.png" alt="Folder inner layer 1" />
+        <img class="layer-3" src="./assets/第三层.png" alt="Folder inner layer 2" />
+        <img class="layer-4" src="./assets/第四层.png" alt="Folder front cover" />
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+feat: initial open source release
+
+- add layered folder hover animation
+- include local assets and preview image
+- document setup, customization, and publishing
