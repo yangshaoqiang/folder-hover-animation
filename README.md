@@ -3,7 +3,9 @@
 A lightweight folder-opening hover animation built with plain HTML and CSS.  
 一个使用原生 HTML 和 CSS 制作的轻量级文件夹悬浮打开动效。
 
-![Preview](./assets/preview.png)
+![Demo Video](./assets/demo-video.gif)
+
+[Live Demo](https://yangshaoqiang.github.io/folder-hover-animation/) | [Source HTML](./index.html) | [Original Video](./assets/新视频.mov)
 
 ## Overview | 项目简介
 
@@ -38,19 +40,20 @@ The project is dependency-free and can be opened directly in a browser.
 
 ## Demo | 预览方式
 
-Open [index.html](./index.html) directly in your browser.  
-直接在浏览器中打开 [index.html](./index.html) 即可预览。
-
-If you publish this repository with GitHub Pages, it can also serve as the live demo page.  
-如果发布到 GitHub Pages，这个页面也可以直接作为在线演示页。
+- Live Demo: [yangshaoqiang.github.io/folder-hover-animation](https://yangshaoqiang.github.io/folder-hover-animation/)  
+  在线演示：如果已启用 GitHub Pages，可直接访问上面的链接。
+- Local Preview: open [index.html](./index.html) in your browser  
+  本地预览：直接在浏览器中打开 [index.html](./index.html)。
 
 ## Project Structure | 项目结构
 
 ```text
 .
 ├── assets/
+│   ├── demo-video.gif
 │   ├── preview.svg
 │   ├── preview.png
+│   ├── 新视频.mov
 │   ├── 第一层.png
 │   ├── 第二层.png
 │   ├── 第三层.png
