@@ -3,7 +3,7 @@
 A lightweight folder-opening hover animation built with plain HTML and CSS.  
 一个使用原生 HTML 和 CSS 制作的轻量级文件夹悬浮打开动效。
 
-![Preview](./assets/preview.svg)
+![Preview](./assets/preview.png)
 
 ## Overview | 项目简介
 
@@ -50,6 +50,7 @@ If you publish this repository with GitHub Pages, it can also serve as the live 
 .
 ├── assets/
 │   ├── preview.svg
+│   ├── preview.png
 │   ├── 第一层.png
 │   ├── 第二层.png
 │   ├── 第三层.png
